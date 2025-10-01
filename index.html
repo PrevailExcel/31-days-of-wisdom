@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31 Days of Wisdom - HBGC National Youth Fellowship</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 25%, #1e40af 50%, #dc2626 75%, #991b1b 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(220, 38, 38, 0.3) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.3);
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #dbeafe 30%, #ef4444 70%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+.header .subtitle {
+    font-size: 1.1em;
+    color: #e0e7ff;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.header .program {
+    font-size: 0.9em;
+    color: #93c5fd;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.day-progress {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.2);
+}
+
+.progress-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.current-day-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+    color: #ffffff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.8em;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.5), 0 10px 40px rgba(239, 68, 68, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.day-cell {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(220, 38, 38, 0.1) 100%);
+    border: 2px solid rgba(147, 197, 253, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+}
+
+.day-cell:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(239, 68, 68, 0.3) 100%);
+    border-color: #93c5fd;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4), 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+.day-cell.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6), 0 8px 30px rgba(239, 68, 68, 0.4);
+    font-weight: 700;
+}
+
+.day-cell.completed {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%);
+    border-color: #60a5fa;
+    color: #dbeafe;
+}
+
+.verses-section {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.2);
+}
+
+.chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #dbeafe 0%, #ef4444 50%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.reading-instruction {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(239, 68, 68, 0.15) 100%);
+    border-radius: 12px;
+    border-left: 4px solid #3b82f6;
+    border-right: 4px solid #ef4444;
+}
+
+.reading-instruction p {
+    color: #e0e7ff;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.verses-list {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.verses-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.verses-list::-webkit-scrollbar-track {
+    background: rgba(30, 58, 138, 0.2);
+    border-radius: 10px;
+}
+
+.verses-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+    border-radius: 10px;
+}
+
+.verses-list::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #60a5fa 0%, #f87171 100%);
+}
+
+.verse {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.verse:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(239, 68, 68, 0.2) 100%);
+    border-left-color: #3b82f6;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
+}
+
+.verse.selected {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(239, 68, 68, 0.25) 100%);
+    border-left-color: #3b82f6;
+    border-right: 3px solid #ef4444;
+    box-shadow: 0 5px 25px rgba(59, 130, 246, 0.4), 0 5px 25px rgba(239, 68, 68, 0.3);
+}
+
+.verse-text {
+    color: #e0e7ff;
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+.verse-number {
+    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.share-tooltip {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.verse:hover .share-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.share-panel {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #dc2626 100%);
+    padding: 30px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    border-top: 3px solid;
+    border-image: linear-gradient(90deg, #3b82f6 0%, #ffffff 50%, #ef4444 100%) 1;
+}
+
+.share-panel.active {
+    bottom: 0;
+}
+
+.share-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.share-verse-preview {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.share-verse-text {
+    color: #e0e7ff;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.share-verse-ref {
+    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4), 0 5px 20px rgba(239, 68, 68, 0.3);
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5), 0 8px 30px rgba(239, 68, 68, 0.4);
+}
+
+.close-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    color: #e0e7ff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.close-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+}
+
+.loading {
+    text-align: center;
+    color: #e0e7ff;
+    font-style: italic;
+    padding: 40px;
+}
+
+#imageCanvas {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .day-grid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 8px;
+    }
+
+    .verses-section {
+        padding: 20px;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+    }
+
+    .share-btn {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="program">HBGC National Youth Fellowship</div>
+            <h1>31 Days of Wisdom</h1>
+            <div class="subtitle">Journey Through Proverbs This October</div>
+        </div>
+
+        <div class="day-progress">
+            <div class="progress-header">
+                <div class="current-day-badge">Day <span id="currentDayNumber">1</span></div>
+            </div>
+            <div class="day-grid" id="dayGrid"></div>
+        </div>
+
+        <div class="verses-section">
+            <h2 class="chapter-title">Proverbs Chapter <span id="chapterNumber">1</span></h2>
+
+            <div class="reading-instruction">
+                <p>📖 Read today's chapter and click on any verse to create a beautiful shareable image</p>
+            </div>
+
+            <div class="verses-list" id="versesList">
+                <div class="loading">Loading verses...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="share-panel" id="sharePanel">
+        <div class="share-content">
+            <div class="share-verse-preview">
+                <div class="share-verse-text" id="shareVerseText"></div>
+                <div class="share-verse-ref" id="shareVerseRef"></div>
+            </div>
+            <div class="share-buttons">
+                <button class="share-btn" onclick="shareImage()">📤 Share Image</button>
+                <button class="share-btn" onclick="downloadImage()">📥 Download</button>
+                <button class="share-btn close-btn" onclick="closeSharePanel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="imageCanvas"></canvas>
+
+    <script>
+        /*
+          JS that supports two proverbs.json shapes:
+          1) { "Info": {...}, "Proverbs": { "1": { "1": "...", "2": "..." }, ... } }
+          2) { "1": { "1": "...", "2": "..." }, ... }
+        */
+
+        let proverbsData = {};     // will become an object of chapters: { "1": { "1": "...", ... } }
+        let currentDay = 1;
+        let selectedVerse = null;
+
+        async function loadProverbsData() {
+            const versesList = document.getElementById('versesList');
+            versesList.innerHTML = '<div class="loading">Loading verses...</div>';
+
+            try {
+                const res = await fetch('proverbs.json', { cache: "no-cache" });
+                if (!res.ok) throw new Error('Failed to fetch proverbs.json (' + res.status + ')');
+                const raw = await res.json();
+
+                // Support both formats: raw.Proverbs or raw itself
+                proverbsData = raw.Proverbs || raw;
+
+                // Ensure keys are strings (they usually are already)
+                // If a top-level Info exists but no Proverbs, try fallback where the JSON itself is the "Proverbs" object:
+                if (!proverbsData || Object.keys(proverbsData).length === 0) {
+                    versesList.innerHTML = '<div class="loading">Proverbs data is empty or invalid.</div>';
+                    return;
+                }
+
+                initializeDayGrid();
+            } catch (err) {
+                console.error('Error loading proverbs.json:', err);
+                document.getElementById('versesList').innerHTML = '<div class="loading">Failed to load verses.</div>';
+            }
+        }
+
+        function initializeDayGrid() {
+            const dayGrid = document.getElementById('dayGrid');
+            dayGrid.innerHTML = ''; // clear any existing cells
+
+            const today = new Date();
+            const isOctober = today.getMonth() === 9; // October => month index 9
+            const todayDate = isOctober ? today.getDate() : 1;
+
+            for (let i = 1; i <= 31; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'day-cell';
+                cell.textContent = i;
+
+                if (i === todayDate) {
+                    cell.classList.add('active');
+                    currentDay = i;
+                }
+                if (i < todayDate) {
+                    cell.classList.add('completed');
+                }
+
+                cell.addEventListener('click', () => selectDay(i));
+                dayGrid.appendChild(cell);
+            }
+
+            document.getElementById('currentDayNumber').textContent = currentDay;
+            loadVerses(currentDay);
+        }
+
+        function selectDay(day) {
+            currentDay = day;
+            document.getElementById('currentDayNumber').textContent = day;
+
+            document.querySelectorAll('.day-cell').forEach((cell, index) => {
+                cell.classList.remove('active');
+                if (index + 1 === day) cell.classList.add('active');
+            });
+
+            loadVerses(day);
+            closeSharePanel();
+        }
+
+        function loadVerses(day) {
+            const versesList = document.getElementById('versesList');
+            const chapterNumber = document.getElementById('chapterNumber');
+            chapterNumber.textContent = day;
+
+            const chapterKey = String(day);
+            const chapter = proverbsData[chapterKey];
+
+            if (!chapter) {
+                versesList.innerHTML = '<div class="loading">Verse data for this chapter will be available soon.</div>';
+                return;
+            }
+
+            // If chapter is an array (older format [{num, text}, ...]), support that too:
+            if (Array.isArray(chapter)) {
+                renderVersesFromArray(chapter);
+                return;
+            }
+
+            // chapter is expected to be an object like { "1": "text", "2": "text", ... }
+            const verseNumbers = Object.keys(chapter)
+                .map(k => Number(k))
+                .filter(n => !isNaN(n))
+                .sort((a, b) => a - b);
+
+            // build DOM fragments (safer than innerHTML)
+            versesList.innerHTML = '';
+            const frag = document.createDocumentFragment();
+
+            verseNumbers.forEach(vnum => {
+                const vtext = chapter[String(vnum)];
+
+                const verseDiv = document.createElement('div');
+                verseDiv.className = 'verse';
+
+                const tooltip = document.createElement('span');
+                tooltip.className = 'share-tooltip';
+                tooltip.textContent = 'Click to share';
+                verseDiv.appendChild(tooltip);
+
+                const textWrap = document.createElement('div');
+                textWrap.className = 'verse-text';
+
+                const numberSpan = document.createElement('span');
+                numberSpan.className = 'verse-number';
+                numberSpan.textContent = vnum;
+
+                // Verses may contain punctuation/quotation — use text nodes to avoid injection
+                textWrap.appendChild(numberSpan);
+                textWrap.appendChild(document.createTextNode(' ' + (vtext || '')));
+
+                verseDiv.appendChild(textWrap);
+
+                // click handler: show share panel
+                verseDiv.addEventListener('click', () => showSharePanel(vnum, vtext, verseDiv));
+
+                frag.appendChild(verseDiv);
+            });
+
+            versesList.appendChild(frag);
+        }
+
+        function renderVersesFromArray(arr) {
+            // compatibility function if the JSON was still in the old [{num,text}] format
+            const versesList = document.getElementById('versesList');
+            versesList.innerHTML = '';
+            const frag = document.createDocumentFragment();
+
+            arr.forEach(item => {
+                const verseDiv = document.createElement('div');
+                verseDiv.className = 'verse';
+
+                const tooltip = document.createElement('span');
+                tooltip.className = 'share-tooltip';
+                tooltip.textContent = 'Click to share';
+                verseDiv.appendChild(tooltip);
+
+                const textWrap = document.createElement('div');
+                textWrap.className = 'verse-text';
+
+                const numberSpan = document.createElement('span');
+                numberSpan.className = 'verse-number';
+                numberSpan.textContent = item.num;
+
+                textWrap.appendChild(numberSpan);
+                textWrap.appendChild(document.createTextNode(' ' + (item.text || '')));
+
+                verseDiv.appendChild(textWrap);
+
+                verseDiv.addEventListener('click', () => showSharePanel(item.num, item.text, verseDiv));
+                frag.appendChild(verseDiv);
+            });
+
+            versesList.appendChild(frag);
+        }
+
+        function showSharePanel(verseNum, verseText, verseElement) {
+            selectedVerse = { num: verseNum, text: verseText };
+
+            // clear previous selection
+            document.querySelectorAll('.verse').forEach(v => v.classList.remove('selected'));
+            if (verseElement) verseElement.classList.add('selected');
+
+            document.getElementById('shareVerseText').textContent = verseText;
+            document.getElementById('shareVerseRef').textContent = `Proverbs ${currentDay}:${verseNum}`;
+            document.getElementById('sharePanel').classList.add('active');
+        }
+
+        function closeSharePanel() {
+            document.getElementById('sharePanel').classList.remove('active');
+            document.querySelectorAll('.verse').forEach(v => v.classList.remove('selected'));
+        }
+
+        /* ---------- Image generation & share / download (unchanged logic, uses selectedVerse) ---------- */
+
+        function generateImageBlob(callback) {
+            if (!selectedVerse) return;
+
+            const canvas = document.getElementById('imageCanvas');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = 1080;
+            canvas.height = 1080;
+
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+
+            // Reuse your gradient SVG as background
+            const backgroundImageURL = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231e1b4b;stop-opacity:1" /><stop offset="100%" style="stop-color:%234c1d95;stop-opacity:1" /></linearGradient></defs><rect width="1080" height="1080" fill="url(%23grad)"/></svg>';
+
+            img.onload = function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0, 1080, 1080);
+
+                // text placement
+                const textAreaTop = 360;
+                const textAreaBottom = 1000;
+                const textAreaHeight = textAreaBottom - textAreaTop;
+
+                const textLength = selectedVerse.text.length;
+                let fontSize;
+                if (textLength < 50) fontSize = 56;
+                else if (textLength < 100) fontSize = 48;
+                else if (textLength < 150) fontSize = 40;
+                else if (textLength < 200) fontSize = 34;
+                else fontSize = 28;
+
+                ctx.fillStyle = 'white';
+                ctx.font = `${fontSize}px Georgia, serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                function wrapText(text, maxWidth) {
+                    const words = text.split(' ');
+                    const lines = [];
+                    let currentLine = words[0] || '';
+
+                    for (let i = 1; i < words.length; i++) {
+                        const word = words[i];
+                        const width = ctx.measureText(currentLine + ' ' + word).width;
+                        if (width < maxWidth) {
+                            currentLine += ' ' + word;
+                        } else {
+                            lines.push(currentLine);
+                            currentLine = word;
+                        }
+                    }
+                    lines.push(currentLine);
+                    return lines;
+                }
+
+                const maxWidth = 900;
+                const lines = wrapText(selectedVerse.text, maxWidth);
+                const lineHeight = fontSize * 1.4;
+                const totalHeight = lines.length * lineHeight;
+                let y = textAreaTop + (textAreaHeight - totalHeight) / 2;
+
+                lines.forEach(line => {
+                    ctx.fillText(line, 540, y);
+                    y += lineHeight;
+                });
+
+                ctx.font = `${Math.floor(fontSize * 0.65)}px Georgia, serif`;
+                ctx.fillText(`Proverbs ${currentDay}:${selectedVerse.num}`, 540, textAreaBottom - 30);
+
+                canvas.toBlob(callback);
+            };
+
+            img.src = backgroundImageURL;
+        }
+
+        async function shareImage() {
+            generateImageBlob(async (blob) => {
+                if (!blob) { alert('Failed to create image.'); return; }
+                const file = new File([blob], `31-days-wisdom-${currentDay}-${selectedVerse.num}.png`, { type: 'image/png' });
+
+                const shareData = {
+                    files: [file],
+                    title: '31 Days of Wisdom',
+                    text: `${selectedVerse.text}\n\nProverbs ${currentDay}:${selectedVerse.num}\n\n#31DaysOfWisdom #HBGC`
+                };
+
+                if (navigator.canShare && navigator.canShare(shareData)) {
+                    try {
+                        await navigator.share(shareData);
+                        closeSharePanel();
+                    } catch (err) {
+                        if (err.name !== 'AbortError') {
+                            console.error('Error sharing:', err);
+                            alert('Unable to share. Try downloading instead.');
+                        }
+                    }
+                } else {
+                    alert('Sharing not supported on this device. Please use the download button.');
+                }
+            });
+        }
+
+        function downloadImage() {
+            generateImageBlob((blob) => {
+                if (!blob) { alert('Failed to create image.'); return; }
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `31-days-wisdom-${currentDay}-${selectedVerse.num}.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+                closeSharePanel();
+            });
+        }
+
+        /* Start the app */
+        loadProverbsData();
+    </script>
+
+</body>
+
+</html>
