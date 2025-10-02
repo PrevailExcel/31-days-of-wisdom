@@ -4,383 +4,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>31 Days of Wisdom - HBGC National Youth Fellowship</title>
+
+    <!-- Primary Meta Tags -->
+    <title>31 Days of Wisdom | HGBC National Youth Fellowship</title>
+    <meta name="title" content="31 Days of Wisdom | HGBC National Youth Fellowship">
+    <meta name="description"
+        content="Join the HGBC National Youth Fellowship in our 31 Days of Wisdom program. Read one chapter of Proverbs daily, grow in wisdom, and share insights with fellow believers.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://31-days-of-wisdom.vercel.app/">
+    <meta property="og:title" content="31 Days of Wisdom | HGBC National Youth Fellowship">
+    <meta property="og:description"
+        content="Read one chapter of Proverbs every day this October with HGBC National Youth Fellowship. Gain wisdom, understanding, and walk in God’s Word.">
+    <meta property="og:image" content="https://31-days-of-wisdom.vercel.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://31-days-of-wisdom.vercel.app/">
+    <meta property="twitter:title" content="31 Days of Wisdom | HGBC National Youth Fellowship">
+    <meta property="twitter:description"
+        content="Grow in wisdom with HGBC National Youth Fellowship. One chapter of Proverbs each day for 31 days.">
+    <meta property="twitter:image" content="https://31-days-of-wisdom.vercel.app/og-image.jpg">
+
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="HGBC Youth, HGBC National Youth Fellowship, 31 Days of Wisdom, Proverbs Study, Daily Bible Reading, Youth Fellowship Program, Christian Devotional, Wisdom from Proverbs">
+
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 25%, #1e40af 50%, #dc2626 75%, #991b1b 100%);
-    min-height: 100vh;
-    padding: 20px;
-    color: #fff;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 25%, #1e40af 50%, #dc2626 75%, #991b1b 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 30px 20px;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(220, 38, 38, 0.3) 100%);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.3);
-}
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 10px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(220, 38, 38, 0.3) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(30, 58, 138, 0.3);
+        }
 
-.header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8em;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #ffffff 0%, #dbeafe 30%, #ef4444 70%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
-}
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #dbeafe 30%, #ef4444 70%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+        }
 
-.header .subtitle {
-    font-size: 1.1em;
-    color: #e0e7ff;
-    margin-bottom: 5px;
-    font-weight: 300;
-}
+        .header .subtitle {
+            font-size: 1.1em;
+            color: #e0e7ff;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
 
-.header .program {
-    font-size: 0.9em;
-    color: #93c5fd;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+        .header .program {
+            font-size: 0.9em;
+            color: #93c5fd;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-.day-progress {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.2);
-}
+        .logo {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
+            margin-right: 7px;
+            /* margin-bottom: 1rem; */
+        }
 
-.progress-header {
-    text-align: center;
-    margin-bottom: 25px;
-}
+        .day-progress {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(30, 58, 138, 0.2);
+        }
 
-.current-day-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
-    color: #ffffff;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 1.8em;
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
-    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.5), 0 10px 40px rgba(239, 68, 68, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
+        .progress-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
 
-.day-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    gap: 10px;
-    margin-top: 25px;
-}
+        .current-day-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+            color: #ffffff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.8em;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.5), 0 10px 40px rgba(239, 68, 68, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
 
-.day-cell {
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(220, 38, 38, 0.1) 100%);
-    border: 2px solid rgba(147, 197, 253, 0.3);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.1em;
-}
+        .day-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 10px;
+            margin-top: 25px;
+        }
 
-.day-cell:hover {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(239, 68, 68, 0.3) 100%);
-    border-color: #93c5fd;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4), 0 5px 15px rgba(239, 68, 68, 0.3);
-}
+        .day-cell {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border: 2px solid rgba(147, 197, 253, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
 
-.day-cell.active {
-    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6), 0 8px 30px rgba(239, 68, 68, 0.4);
-    font-weight: 700;
-}
+        .day-cell:hover {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(239, 68, 68, 0.3) 100%);
+            border-color: #93c5fd;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4), 0 5px 15px rgba(239, 68, 68, 0.3);
+        }
 
-.day-cell.completed {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%);
-    border-color: #60a5fa;
-    color: #dbeafe;
-}
+        .day-cell.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6), 0 8px 30px rgba(239, 68, 68, 0.4);
+            font-weight: 700;
+        }
 
-.verses-section {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.2);
-}
+        .day-cell.completed {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.2) 100%);
+            border-color: #60a5fa;
+            color: #dbeafe;
+        }
 
-.chapter-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, #dbeafe 0%, #ef4444 50%, #93c5fd 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
+        .verses-section {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(30, 58, 138, 0.2);
+        }
 
-.reading-instruction {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(239, 68, 68, 0.15) 100%);
-    border-radius: 12px;
-    border-left: 4px solid #3b82f6;
-    border-right: 4px solid #ef4444;
-}
+        .chapter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #dbeafe 0%, #ef4444 50%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-.reading-instruction p {
-    color: #e0e7ff;
-    font-size: 1.05em;
-    line-height: 1.6;
-}
+        .reading-instruction {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(239, 68, 68, 0.15) 100%);
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            border-right: 4px solid #ef4444;
+        }
 
-.verses-list {
-    max-height: 600px;
-    overflow-y: auto;
-    padding-right: 10px;
-}
+        .reading-instruction p {
+            color: #e0e7ff;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
 
-.verses-list::-webkit-scrollbar {
-    width: 8px;
-}
+        .verses-list {
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
 
-.verses-list::-webkit-scrollbar-track {
-    background: rgba(30, 58, 138, 0.2);
-    border-radius: 10px;
-}
+        .verses-list::-webkit-scrollbar {
+            width: 8px;
+        }
 
-.verses-list::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
-    border-radius: 10px;
-}
+        .verses-list::-webkit-scrollbar-track {
+            background: rgba(30, 58, 138, 0.2);
+            border-radius: 10px;
+        }
 
-.verses-list::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #60a5fa 0%, #f87171 100%);
-}
+        .verses-list::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+            border-radius: 10px;
+        }
 
-.verse {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    border-left: 3px solid transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-}
+        .verses-list::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #60a5fa 0%, #f87171 100%);
+        }
 
-.verse:hover {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(239, 68, 68, 0.2) 100%);
-    border-left-color: #3b82f6;
-    transform: translateX(5px);
-    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
-}
+        .verse {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
 
-.verse.selected {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(239, 68, 68, 0.25) 100%);
-    border-left-color: #3b82f6;
-    border-right: 3px solid #ef4444;
-    box-shadow: 0 5px 25px rgba(59, 130, 246, 0.4), 0 5px 25px rgba(239, 68, 68, 0.3);
-}
+        .verse:hover {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(239, 68, 68, 0.2) 100%);
+            border-left-color: #3b82f6;
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
+        }
 
-.verse-text {
-    color: #e0e7ff;
-    line-height: 1.8;
-    font-size: 1.05em;
-}
+        .verse.selected {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(239, 68, 68, 0.25) 100%);
+            border-left-color: #3b82f6;
+            border-right: 3px solid #ef4444;
+            box-shadow: 0 5px 25px rgba(59, 130, 246, 0.4), 0 5px 25px rgba(239, 68, 68, 0.3);
+        }
 
-.verse-number {
-    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-    margin-right: 10px;
-    font-size: 1.1em;
-}
+        .verse-text {
+            color: #e0e7ff;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
 
-.share-tooltip {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    font-weight: 600;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-}
+        .verse-number {
+            background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
 
-.verse:hover .share-tooltip {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .share-tooltip {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
 
-.share-panel {
-    position: fixed;
-    bottom: -100%;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #dc2626 100%);
-    padding: 30px;
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
-    transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 1000;
-    border-top: 3px solid;
-    border-image: linear-gradient(90deg, #3b82f6 0%, #ffffff 50%, #ef4444 100%) 1;
-}
+        .verse:hover .share-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.share-panel.active {
-    bottom: 0;
-}
+        .share-panel {
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #dc2626 100%);
+            padding: 30px;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+            transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border-top: 3px solid;
+            border-image: linear-gradient(90deg, #3b82f6 0%, #ffffff 50%, #ef4444 100%) 1;
+        }
 
-.share-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
+        .share-panel.active {
+            bottom: 0;
+        }
 
-.share-verse-preview {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
+        .share-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-.share-verse-text {
-    color: #e0e7ff;
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
+        .share-verse-preview {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(220, 38, 38, 0.2) 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-.share-verse-ref {
-    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 600;
-}
+        .share-verse-text {
+            color: #e0e7ff;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
 
-.share-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        .share-verse-ref {
+            background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
 
-.share-btn {
-    background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
-    color: #ffffff;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4), 0 5px 20px rgba(239, 68, 68, 0.3);
-}
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-.share-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5), 0 8px 30px rgba(239, 68, 68, 0.4);
-}
+        .share-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4), 0 5px 20px rgba(239, 68, 68, 0.3);
+        }
 
-.close-btn {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-    color: #e0e7ff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5), 0 8px 30px rgba(239, 68, 68, 0.4);
+        }
 
-.close-btn:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
-}
+        .close-btn {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            color: #e0e7ff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-.loading {
-    text-align: center;
-    color: #e0e7ff;
-    font-style: italic;
-    padding: 40px;
-}
+        .close-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+        }
 
-#imageCanvas {
-    display: none;
-}
+        .loading {
+            text-align: center;
+            color: #e0e7ff;
+            font-style: italic;
+            padding: 40px;
+        }
 
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 2em;
-    }
+        #imageCanvas {
+            display: none;
+        }
 
-    .day-grid {
-        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-        gap: 8px;
-    }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
 
-    .verses-section {
-        padding: 20px;
-    }
+            .day-grid {
+                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+                gap: 8px;
+            }
 
-    .share-buttons {
-        flex-direction: column;
-    }
+            .verses-section {
+                padding: 20px;
+            }
 
-    .share-btn {
-        width: 100%;
-    }
-}
+            .share-buttons {
+                flex-direction: column;
+            }
+
+            .share-btn {
+                width: 100%;
+            }
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Merriweather&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <div class="program">HBGC National Youth Fellowship</div>
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+            <img src="logo.jpg" alt="HGBC Youth Logo" class="logo">
+            <div class="program">HGBC National Youth Fellowship</div>
+            </div>
             <h1>31 Days of Wisdom</h1>
-            <div class="subtitle">Journey Through Proverbs This October</div>
+            <!-- <div class="subtitle">One Chapter per day from the book of Proverbs</div> -->
         </div>
 
         <div class="day-progress">
@@ -420,13 +462,7 @@ body {
     <canvas id="imageCanvas"></canvas>
 
     <script>
-        /*
-          JS that supports two proverbs.json shapes:
-          1) { "Info": {...}, "Proverbs": { "1": { "1": "...", "2": "..." }, ... } }
-          2) { "1": { "1": "...", "2": "..." }, ... }
-        */
-
-        let proverbsData = {};     // will become an object of chapters: { "1": { "1": "...", ... } }
+        let proverbsData = {};
         let currentDay = 1;
         let selectedVerse = null;
 
@@ -626,8 +662,7 @@ body {
             img.crossOrigin = 'anonymous';
 
             // Reuse your gradient SVG as background
-            const backgroundImageURL = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231e1b4b;stop-opacity:1" /><stop offset="100%" style="stop-color:%234c1d95;stop-opacity:1" /></linearGradient></defs><rect width="1080" height="1080" fill="url(%23grad)"/></svg>';
-
+            const backgroundImageURL = 'bg.JPG'
             img.onload = function () {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(img, 0, 0, 1080, 1080);
@@ -639,14 +674,15 @@ body {
 
                 const textLength = selectedVerse.text.length;
                 let fontSize;
-                if (textLength < 50) fontSize = 56;
-                else if (textLength < 100) fontSize = 48;
-                else if (textLength < 150) fontSize = 40;
-                else if (textLength < 200) fontSize = 34;
-                else fontSize = 28;
+                if (textLength < 50) fontSize = 64;
+else if (textLength < 100) fontSize = 56;
+else if (textLength < 150) fontSize = 48;
+else if (textLength < 200) fontSize = 42;
+else fontSize = 34;
 
-                ctx.fillStyle = 'white';
-                ctx.font = `${fontSize}px Georgia, serif`;
+
+                ctx.fillStyle = '#633B22';
+                ctx.font = `${fontSize}px 'Merriweather', serif`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
 
@@ -680,8 +716,9 @@ body {
                     y += lineHeight;
                 });
 
+                ctx.fillStyle = 'white';
                 ctx.font = `${Math.floor(fontSize * 0.65)}px Georgia, serif`;
-                ctx.fillText(`Proverbs ${currentDay}:${selectedVerse.num}`, 540, textAreaBottom - 30);
+                ctx.fillText(`Proverbs ${currentDay}:${selectedVerse.num}`, 540, textAreaBottom - 70);
 
                 canvas.toBlob(callback);
             };
@@ -697,7 +734,7 @@ body {
                 const shareData = {
                     files: [file],
                     title: '31 Days of Wisdom',
-                    text: `${selectedVerse.text}\n\nProverbs ${currentDay}:${selectedVerse.num}\n\n#31DaysOfWisdom #HBGC`
+                    text: `${selectedVerse.text}\n\nProverbs ${currentDay}:${selectedVerse.num}\n\n#31DaysOfWisdom #HGBC`
                 };
 
                 if (navigator.canShare && navigator.canShare(shareData)) {
