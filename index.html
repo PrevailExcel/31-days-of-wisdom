@@ -410,7 +410,8 @@
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Merriweather&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -418,8 +419,8 @@
     <div class="container">
         <div class="header">
             <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-            <img src="logo.jpg" alt="HGBC Youth Logo" class="logo">
-            <div class="program">HGBC National Youth Fellowship</div>
+                <img src="logo.jpg" alt="HGBC Youth Logo" class="logo">
+                <div class="program">HGBC National Youth Fellowship</div>
             </div>
             <h1>31 Days of Wisdom</h1>
             <!-- <div class="subtitle">One Chapter per day from the book of Proverbs</div> -->
@@ -648,7 +649,6 @@
         }
 
         /* ---------- Image generation & share / download (unchanged logic, uses selectedVerse) ---------- */
-
         function generateImageBlob(callback) {
             if (!selectedVerse) return;
 
@@ -661,7 +661,6 @@
             const img = new Image();
             img.crossOrigin = 'anonymous';
 
-            // Reuse your gradient SVG as background
             const backgroundImageURL = 'bg.JPG'
             img.onload = function () {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -675,16 +674,21 @@
                 const textLength = selectedVerse.text.length;
                 let fontSize;
                 if (textLength < 50) fontSize = 64;
-else if (textLength < 100) fontSize = 56;
-else if (textLength < 150) fontSize = 48;
-else if (textLength < 200) fontSize = 42;
-else fontSize = 34;
-
+                else if (textLength < 100) fontSize = 56;
+                else if (textLength < 150) fontSize = 48;
+                else if (textLength < 200) fontSize = 42;
+                else fontSize = 34;
 
                 ctx.fillStyle = '#633B22';
-                ctx.font = `${fontSize}px 'Merriweather', serif`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
+
+                // --- NEW: Add Day label ---
+                ctx.font = `48px 'Poppins', sans-serif`;
+                ctx.fillText(`Day ${currentDay}: Proverbs ${currentDay}`, 540, textAreaTop - 6);
+
+                // --- Verse Text ---
+                ctx.font = `${fontSize}px 'Merriweather', serif`;
 
                 function wrapText(text, maxWidth) {
                     const words = text.split(' ');
@@ -716,6 +720,7 @@ else fontSize = 34;
                     y += lineHeight;
                 });
 
+                // --- Verse reference (bottom) ---
                 ctx.fillStyle = 'white';
                 ctx.font = `${Math.floor(fontSize * 0.65)}px Georgia, serif`;
                 ctx.fillText(`Proverbs ${currentDay}:${selectedVerse.num}`, 540, textAreaBottom - 70);
